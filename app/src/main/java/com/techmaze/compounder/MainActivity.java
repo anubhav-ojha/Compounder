@@ -2,6 +2,8 @@ package com.techmaze.compounder;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.view.View;
@@ -22,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     double principal, rate ,time, CI , new_principal, periodic_addition , initial_principal;
     int investment_value ;
     int ci_int ;
-    ListView listViewDisplay ;
+    RecyclerView recyclerView_display;
     ArrayAdapter<Integer> arrayAdapter ;
 
     @Override
@@ -47,7 +49,8 @@ public class MainActivity extends AppCompatActivity {
         tv_profit = (TextView) findViewById(R.id.tv_profit);
         tv_Contributed = (TextView) findViewById(R.id.tv_Contributed);
 
-        listViewDisplay = findViewById(R.id.listViewDisplay) ;
+        recyclerView_display = findViewById(R.id.recycler_ViewDisplay) ;
+        recyclerView_display.setLayoutManager(new LinearLayoutManager(this));
 
         et_StartinBalance.setText("1000");
         et_Annual.setText("10");
@@ -65,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         arrayAdapter = new ArrayAdapter<Integer>(getApplicationContext(), android.R.layout.simple_list_item_1, arraylist);
-        listViewDisplay.setAdapter(arrayAdapter);
+       // recyclerView_display.setAdapter(arrayAdapter);
     }
 
     public class Click implements View.OnClickListener{

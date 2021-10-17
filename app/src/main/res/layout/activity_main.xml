@@ -259,12 +259,12 @@
             app:layout_constraintStart_toStartOf="@+id/tv_profit"
             app:layout_constraintTop_toBottomOf="@+id/tv_profit" />
 
-        <ListView
-            android:id="@+id/listViewDisplay"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_ViewDisplay"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:nestedScrollingEnabled="true"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="70dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_Contributed" />
@@ -278,8 +278,8 @@
             android:backgroundTint="#ebe9ec"
             android:textColor="#47d7aa"
             app:layout_constraintEnd_toStartOf="@+id/btn_back"
-            app:layout_constraintStart_toStartOf="@+id/listViewDisplay"
-            app:layout_constraintTop_toBottomOf="@+id/listViewDisplay" />
+            app:layout_constraintStart_toStartOf="@+id/recycler_ViewDisplay"
+            app:layout_constraintTop_toBottomOf="@+id/recycler_ViewDisplay" />
 
         <Button
             android:id="@+id/btn_back"
@@ -292,7 +292,8 @@
             android:textAllCaps="false"
             app:layout_constraintHorizontal_bias="0.51"
             app:layout_constraintStart_toStartOf="@+id/btn_Units"
-            app:layout_constraintTop_toBottomOf="@+id/listViewDisplay" />
+            app:layout_constraintTop_toBottomOf="@+id/recycler_ViewDisplay" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
