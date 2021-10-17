@@ -10,7 +10,8 @@
         android:layout_height="wrap_content"
         android:text="@string/app_name"
         android:textStyle="bold"
+        android:textColor="#47d7aa"
         android:letterSpacing="0.05"
-        android:textSize="20sp"/>
+        android:textSize="18sp"/>
 
 </LinearLayout>
