@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".MainActivity"
     android:padding="15dp"
+    android:fillViewport="true"
     tools:ignore="SpeakableTextPresentCheck">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="7dp">
 
 
@@ -20,7 +22,6 @@
             android:layout_height="wrap_content"
             android:text="Starting Balance"
             android:textColor="@drawable/text_color"
-
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -30,7 +31,6 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
             android:textColor="@drawable/text_color"
-
             android:text="Annual Return Rate"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.026"
@@ -151,9 +151,8 @@
             android:gravity="center"
             android:layout_marginTop="10dp"
             android:id="@+id/linearlayout1"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCompoundFrequency">
 
-            app:layout_constraintTop_toBottomOf="@+id/textViewCompoundFrequency"
-            >
             <TextView
                 android:layout_width="50dp"
                 android:layout_height="35dp"
@@ -263,11 +262,11 @@
         <ListView
             android:id="@+id/listViewDisplay"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="true"
             android:layout_marginTop="100dp"
-            app:layout_constraintEnd_toEndOf="@+id/tv_Contributed"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="@+id/tv_Contributed"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_Contributed" />
 
         <Button
@@ -278,7 +277,6 @@
             android:textAllCaps="false"
             android:backgroundTint="#ebe9ec"
             android:textColor="#47d7aa"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/btn_back"
             app:layout_constraintStart_toStartOf="@+id/listViewDisplay"
             app:layout_constraintTop_toBottomOf="@+id/listViewDisplay" />
@@ -288,7 +286,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Back to Top"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:backgroundTint="#ebe9ec"
             android:textColor="#47d7aa"
