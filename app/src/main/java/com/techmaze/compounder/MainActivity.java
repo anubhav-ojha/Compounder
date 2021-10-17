@@ -97,10 +97,10 @@ public class MainActivity extends AppCompatActivity {
                     periodic_addition =Double.parseDouble(et_Periodic.getText().toString());
                     rate = Double.parseDouble(et_Annual.getText().toString());
                     time =Double.parseDouble(et_Duration.getText().toString());
-                   // initial_principal = principal ;
-                    for (int i = 1 ; i<= time ; i++)
+                    initial_principal = principal ;
+                    for (int i = 1 ; i<= 4*time ; i++)
                     {
-                        new_principal = (double)  principal * (1+ rate /100);
+                        new_principal = (double)  principal * (1+ rate /400);
 
                         principal = new_principal + periodic_addition ;
                         arraylist.add((int) principal) ;
@@ -120,9 +120,18 @@ public class MainActivity extends AppCompatActivity {
                     periodic_addition =Double.parseDouble(et_Periodic.getText().toString());
                     rate = Double.parseDouble(et_Annual.getText().toString());
                     time =Double.parseDouble(et_Duration.getText().toString());
-                    new_principal = (double) ( ( principal * Math.pow(1+ rate /1200, 12*time)) + (periodic_addition * ((Math.pow(1+ rate/1200, 12*time) - 1)/(rate/1200))) );
-                    CI = new_principal - ( principal + periodic_addition *time);
-                    investment_value = (int) ( principal+CI  + periodic_addition * 12*time);
+                    initial_principal = principal ;
+                    for (int i = 1 ; i<= 12*time ; i++)
+                    {
+                        new_principal = (double)  principal * (1+ rate /1200);
+
+                        principal = new_principal + periodic_addition ;
+                        arraylist.add((int) principal) ;
+                    }
+                    //arrayAdapter = new ArrayAdapter<Integer>(getApplicationContext(), android.R.layout.simple_list_item_1, arraylist);
+                    // listViewDisplay.setAdapter(arrayAdapter);
+                    CI = principal - ( initial_principal + periodic_addition * 12*time);
+                    investment_value = (int) ( initial_principal + periodic_addition * 12*time+CI);
                     ci_int  = (int) CI;
                     tv_InvestmentValue.setText("$ "+String.valueOf(investment_value));
                     tv_profit.setText("Profit $ "+String.valueOf(ci_int));
@@ -136,14 +145,22 @@ public class MainActivity extends AppCompatActivity {
                     periodic_addition =Double.parseDouble(et_Periodic.getText().toString());
                     rate = Double.parseDouble(et_Annual.getText().toString());
                     time =Double.parseDouble(et_Duration.getText().toString());
-                    new_principal = (double) ( ( principal * Math.pow(1+ rate /5200, 52*time)) + (periodic_addition * ((Math.pow(1+ rate/5200,52* time) - 1)/(rate/5200))) );
-                    CI = new_principal - ( principal + periodic_addition * time);
-                    investment_value = (int) ( principal+CI  + periodic_addition * 52* time);
+                    initial_principal = principal ;
+                    for (int i = 1 ; i<= 52*time ; i++)
+                    {
+                        new_principal = (double)  principal * (1+ rate /5200);
+
+                        principal = new_principal + periodic_addition ;
+                        arraylist.add((int) principal) ;
+                    }
+                    //arrayAdapter = new ArrayAdapter<Integer>(getApplicationContext(), android.R.layout.simple_list_item_1, arraylist);
+                    // listViewDisplay.setAdapter(arrayAdapter);
+                    CI = principal - ( initial_principal + periodic_addition * 52*time);
+                    investment_value = (int) ( initial_principal + periodic_addition * 52*time+CI);
                     ci_int  = (int) CI;
                     tv_InvestmentValue.setText("$ "+String.valueOf(investment_value));
-                    tv_profit.setText("Profit $"+String.valueOf(ci_int));
-                    tv_Contributed.setText("Contributed $"+String.valueOf(investment_value-ci_int));
-
+                    tv_profit.setText("Profit $ "+String.valueOf(ci_int));
+                    tv_Contributed.setText("Contributed $ "+String.valueOf(investment_value-ci_int));
                     Toast.makeText(MainActivity.this, "btn weekly", Toast.LENGTH_SHORT).show();
                     break;
                 default:
