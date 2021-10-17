@@ -28,7 +28,7 @@ public class rv_adapter extends RecyclerView.Adapter<rv_adapter.holder> {
 
     @Override
     public void onBindViewHolder(@NonNull holder holder, int position) {
-        holder.tv_recyclerView.setText(String.valueOf(displayItems[position]));
+        holder.tv_recyclerView.setText(String.valueOf(displayItems.get(position)));
     }
 
     @Override
