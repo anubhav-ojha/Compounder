@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:padding="15dp"
+    tools:ignore="SpeakableTextPresentCheck">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="7dp">
+
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Starting Balance"
+            android:textColor="@drawable/text_color"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:textColor="@drawable/text_color"
+
+            android:text="Annual Return Rate"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.026"
+            app:layout_constraintStart_toEndOf="@+id/textView2"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/et_StartinBalance"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:ems="10"
+            android:hint="$ 1000"
+            android:inputType="numberDecimal"
+            android:textSize="22sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        <EditText
+            android:id="@+id/et_Annual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:hint="20%"
+            android:textSize="22sp"
+            app:layout_constraintStart_toStartOf="@+id/textView3"
+            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/et_Annual"
+            app:layout_constraintStart_toStartOf="@+id/et_StartinBalance"
+            app:layout_constraintTop_toBottomOf="@+id/et_StartinBalance" />
+
+        <TextView
+            android:id="@+id/textViewPeriodic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@drawable/text_color"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="40dp"
+            android:text="Periodic Additions"
+            app:layout_constraintEnd_toStartOf="@+id/textViewDuration"
+            app:layout_constraintTop_toBottomOf="@+id/et_StartinBalance" />
+
+        <TextView
+            android:id="@+id/textViewDuration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:textColor="@drawable/text_color"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="80dp"
+            android:text="Duration(years)"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/et_Annual"
+            app:layout_constraintTop_toBottomOf="@+id/et_Annual" />
+
+        <EditText
+            android:id="@+id/et_Periodic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:ems="10"
+            android:hint="$ 1000"
+            android:inputType="numberDecimal"
+            android:textSize="22sp"
+            app:layout_constraintStart_toStartOf="@+id/textViewPeriodic"
+            app:layout_constraintTop_toBottomOf="@+id/textViewPeriodic" />
+
+        <EditText
+            android:id="@+id/et_Duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:ems="10"
+            android:hint="1"
+            android:inputType="numberDecimal"
+            android:layout_marginLeft="75dp"
+
+            android:textSize="22sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/textViewDuration"
+            app:layout_constraintTop_toBottomOf="@+id/textViewDuration" />
+        <View
+            android:id="@+id/view2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/et_Duration"
+            app:layout_constraintStart_toStartOf="@+id/et_Periodic"
+            app:layout_constraintTop_toBottomOf="@+id/et_Periodic" />
+
+        <TextView
+            android:id="@+id/textViewCompoundFrequency"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textColor="@drawable/text_color"
+            android:text="Compound Frequency"
+            app:layout_constraintEnd_toEndOf="@+id/view2"
+            app:layout_constraintHorizontal_bias="0.42"
+            app:layout_constraintStart_toStartOf="@+id/view2"
+            app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:id="@+id/linearlayout1"
+
+            app:layout_constraintTop_toBottomOf="@+id/textViewCompoundFrequency"
+            >
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:textSize="12sp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textColor="@drawable/text_color"
+                android:textAllCaps="false"
+                android:id="@+id/btn_yearly"
+                android:background="@drawable/border_shape_yearly"
+
+                android:text="Yearly"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:id="@+id/btn_Quarterly"
+                android:layout_weight="1"
+                android:textAllCaps="false"
+                android:textColor="@drawable/text_color"
+                android:gravity="center"
+                android:background="@drawable/custom_button"
+                android:textSize="12sp"
+                android:text="Quarterly"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:id="@+id/btn_Monthly"
+                android:layout_weight="1"
+                android:textAllCaps="false"
+                android:textColor="@drawable/text_color"
+                android:gravity="center"
+                android:background="@drawable/custom_button"
+                android:textSize="12sp"
+                android:text="Monthly"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:textAllCaps="false"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textColor="@drawable/text_color"
+                android:background="@drawable/border_shape_weekly"
+                android:textSize="12sp"
+                android:id="@+id/btn_Weekly"
+                android:text="Weekly"/>
+
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view3"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="@+id/linearlayout1"
+            app:layout_constraintStart_toStartOf="@+id/linearlayout1"
+            app:layout_constraintTop_toBottomOf="@+id/linearlayout1" />
+
+        <TextView
+            android:id="@+id/textViewInvestmentValue1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:textColor="@drawable/text_color"
+            android:text="Investment Value"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@+id/view3"
+            app:layout_constraintStart_toStartOf="@+id/view3"
+            app:layout_constraintTop_toBottomOf="@+id/view3"/>
+        <TextView
+            android:id="@+id/tv_InvestmentValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textSize="26sp"
+            android:text="$ 12,000"
+            app:layout_constraintEnd_toEndOf="@+id/textViewInvestmentValue1"
+            app:layout_constraintStart_toStartOf="@+id/textViewInvestmentValue1"
+            app:layout_constraintTop_toBottomOf="@+id/textViewInvestmentValue1"/>
+
+        <TextView
+            android:id="@+id/tv_profit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="Profit $ 5000"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/tv_InvestmentValue"
+            app:layout_constraintStart_toStartOf="@+id/tv_InvestmentValue"
+            app:layout_constraintTop_toBottomOf="@+id/tv_InvestmentValue" />
+
+        <TextView
+            android:id="@+id/tv_Contributed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Contributed $ 5000"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/tv_profit"
+            app:layout_constraintStart_toStartOf="@+id/tv_profit"
+            app:layout_constraintTop_toBottomOf="@+id/tv_profit" />
+
+        <ListView
+            android:id="@+id/listViewDisplay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="100dp"
+            app:layout_constraintEnd_toEndOf="@+id/tv_Contributed"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="@+id/tv_Contributed"
+            app:layout_constraintTop_toBottomOf="@+id/tv_Contributed" />
+
+        <Button
+            android:id="@+id/btn_Units"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Units"
+            android:textAllCaps="false"
+            android:background="#4fa5d5"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btn_back"
+            app:layout_constraintStart_toStartOf="@+id/listViewDisplay"
+            app:layout_constraintTop_toBottomOf="@+id/listViewDisplay" />
+
+        <Button
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Back to Top"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="#4fa5d5"
+            android:textAllCaps="false"
+            app:layout_constraintHorizontal_bias="0.51"
+            app:layout_constraintStart_toStartOf="@+id/btn_Units"
+            app:layout_constraintTop_toBottomOf="@+id/listViewDisplay" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
